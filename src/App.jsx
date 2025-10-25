@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import JobfountHero from './Components/Hero.jsx';
 import CoreServices from './Components/CoreSection.jsx';
@@ -11,13 +11,15 @@ import ContactUs from './Components/Contact.jsx';
 import './App.css';
 
 function App() {
+  const prometricLicensingRef = useRef(null);
+
   return (
     <Routes>
       <Route path="/" element={
         <div>
-          <JobfountHero />
+          <JobfountHero prometricLicensingRef={prometricLicensingRef} />
           <CoreServices />
-          <PrometricLicensing />
+          <PrometricLicensing ref={prometricLicensingRef} />
           <PartnershipSection />
           <ContactUs /> 
           <JobfountFooter /> 
@@ -25,6 +27,7 @@ function App() {
       } />
       <Route path="/findjobs" element={<FindJobsPage />} />
       <Route path="/hiretalents" element={<HireTalentPage />} />
+      <Route path="/licensing" element={<PrometricLicensing />} />
       <Route path="/contact" element={<ContactUs />} />
     </Routes>
   );

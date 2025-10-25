@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { CheckCircle, Globe, FileCheck, Calendar, GraduationCap, Briefcase, ArrowRight, Award, Users, TrendingUp } from 'lucide-react';
 
-const PrometricLicensing = () => {
+const PrometricLicensing = React.forwardRef((props, ref) => {
   const [activeCard, setActiveCard] = useState(null);
   const headlineRef = useRef(null);
   const subtitleRef = useRef(null);
@@ -84,7 +84,7 @@ const PrometricLicensing = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-slate-50 to-gray-100 relative overflow-hidden">
+    <div ref={ref} id="prometric-licensing-section" className="min-h-screen bg-gradient-to-br from-gray-50 via-slate-50 to-gray-100 relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute top-10 sm:top-20 -left-10 sm:-left-20 w-40 sm:w-80 h-40 sm:h-80 rounded-full opacity-5" style={{ background: '#1F6367' }}></div>
@@ -281,6 +281,6 @@ const PrometricLicensing = () => {
       </div>
     </div>
   );
-};
+});
 
 export default PrometricLicensing;

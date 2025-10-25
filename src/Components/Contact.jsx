@@ -68,7 +68,7 @@ const ContactUs = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mb-12 sm:mb-16 items-start">
+        <div id="contact-section" className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mb-12 sm:mb-16 items-start">
           {/* Left Section */}
           <div className="flex flex-col h-full">
             {/* Contact Info */}

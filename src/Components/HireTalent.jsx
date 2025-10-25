@@ -109,6 +109,7 @@ const HireTalentPage = () => {
 
               {/* Contact Button */}
               <button 
+                onClick={() => navigate('/contact')}
                 className="group w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 text-white font-bold text-base sm:text-lg rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 flex items-center justify-center space-x-2 sm:space-x-3"
                 style={{ background: 'linear-gradient(135deg, #1F6367 0%, #E63946 100%)' }}
               >

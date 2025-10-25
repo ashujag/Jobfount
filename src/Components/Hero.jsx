@@ -71,7 +71,7 @@ const SplitText = ({
   );
 };
 
-export default function Hero() {
+export default function Hero({ prometricLicensingRef }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [category, setCategory] = useState('All categories');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -84,6 +84,13 @@ export default function Hero() {
 
   const handleHireTalentClick = () => {
     navigate('/hiretalents');
+    setMobileMenuOpen(false);
+  };
+
+  const handleLicensingSupportClick = () => {
+    if (prometricLicensingRef && prometricLicensingRef.current) {
+      prometricLicensingRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
     setMobileMenuOpen(false);
   };
 
@@ -108,7 +115,7 @@ export default function Hero() {
               <a href="/hiretalents" className="text-gray-600 hover:text-[#1F6367] hover:bg-gray-50 px-4 py-2 rounded-lg font-medium transition-all duration-300" onClick={handleHireTalentClick}>
                 Hire Talents
               </a>
-              <a href="#" className="text-gray-600 hover:text-[#1F6367] hover:bg-gray-50 px-4 py-2 rounded-lg font-medium transition-all duration-300">
+              <a href="#contact-section" className="text-gray-600 hover:text-[#1F6367] hover:bg-gray-50 px-4 py-2 rounded-lg font-medium transition-all duration-300">
                 Contact Us
               </a>
             </nav>
@@ -139,7 +146,7 @@ export default function Hero() {
                 <a href="/hiretalents" className="text-gray-600 hover:text-[#1F6367] hover:bg-gray-50 px-4 py-3 rounded-lg font-medium transition-all duration-300" onClick={handleHireTalentClick}>
                   Hire Talents
                 </a>
-                <a href="#" className="text-gray-600 hover:text-[#1F6367] hover:bg-gray-50 px-4 py-3 rounded-lg font-medium transition-all duration-300" onClick={() => setMobileMenuOpen(false)}>
+                <a href="#contact-section" className="text-gray-600 hover:text-[#1F6367] hover:bg-gray-50 px-4 py-3 rounded-lg font-medium transition-all duration-300" onClick={() => setMobileMenuOpen(false)}>
                   Contact Us
                 </a>
                 <button className="bg-[#E63946] hover:bg-[#d62835] text-white px-4 py-3 rounded-lg font-semibold shadow-lg w-full text-left">
@@ -157,14 +164,14 @@ export default function Hero() {
             <div className="mb-6 sm:mb-8 text-center">
               <SplitText
                 text="Unlocking Talent."
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-1 sm:mb-2 tracking-tight px-2"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-1 sm:mb-2 tracking-tight px-2 whitespace-nowrap sm:whitespace-normal"
                 delay={50}
                 duration={0.6}
                 tag="h1"
               />
               <SplitText
                 text="Illuminating Growth."
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight px-2"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight px-2 whitespace-nowrap sm:whitespace-normal"
                 delay={50}
                 duration={0.6}
                 tag="h1"
@@ -188,7 +195,10 @@ export default function Hero() {
               >
                 Hire Talent
               </button>
-              <button className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-8 sm:px-10 py-3 sm:py-3.5 rounded-lg font-semibold shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 animate-[slideUp_0.8s_ease-out_1.2s_both] text-sm sm:text-base">
+              <button
+                className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-8 sm:px-10 py-3 sm:py-3.5 rounded-lg font-semibold shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 animate-[slideUp_0.8s_ease-out_1.2s_both] text-sm sm:text-base"
+                onClick={handleLicensingSupportClick}
+              >
                 Licensing Support
               </button>
             </div>
