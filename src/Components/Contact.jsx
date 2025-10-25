@@ -8,6 +8,8 @@ const ContactUs = () => {
     phone: '',
     message: ''
   });
+  const [errors1, setErrors1] = useState({});
+  const [successMessage1, setSuccessMessage1] = useState('');
 
   const [formData2, setFormData2] = useState({
     name: '',
@@ -15,15 +17,51 @@ const ContactUs = () => {
     phone: '',
     message: ''
   });
+  const [errors2, setErrors2] = useState({});
+  const [successMessage2, setSuccessMessage2] = useState('');
 
   const [mapView, setMapView] = useState('map');
 
-  const handleSubmit1 = () => {
-    console.log('Form 1 submitted:', formData1);
+  const handleSubmit1 = (e) => {
+    e.preventDefault();
+    const newErrors = {};
+    if (!formData1.name) newErrors.name = 'Name is required';
+    if (!formData1.email) newErrors.email = 'Email is required';
+    if (!formData1.phone) newErrors.phone = 'Phone is required';
+    if (!formData1.message) newErrors.message = 'Message is required';
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors1(newErrors);
+      setSuccessMessage1('');
+    } else {
+      setErrors1({});
+      setSuccessMessage1('Form 1 submitted successfully!');
+      console.log('Form 1 submitted:', formData1);
+      // Here you would typically send the data to a server
+      // For now, we'll just clear the form
+      setFormData1({ name: '', email: '', phone: '', message: '' });
+    }
   };
 
-  const handleSubmit2 = () => {
-    console.log('Form 2 submitted:', formData2);
+  const handleSubmit2 = (e) => {
+    e.preventDefault();
+    const newErrors = {};
+    if (!formData2.name) newErrors.name = 'Name is required';
+    if (!formData2.email) newErrors.email = 'Email is required';
+    if (!formData2.phone) newErrors.phone = 'Phone is required';
+    if (!formData2.message) newErrors.message = 'Message is required';
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors2(newErrors);
+      setSuccessMessage2('');
+    } else {
+      setErrors2({});
+      setSuccessMessage2('Form 2 submitted successfully!');
+      console.log('Form 2 submitted:', formData2);
+      // Here you would typically send the data to a server
+      // For now, we'll just clear the form
+      setFormData2({ name: '', email: '', phone: '', message: '' });
+    }
   };
 
   return (
@@ -142,52 +180,69 @@ const ContactUs = () => {
                 If you're talented and looking<br />
                 for a job, contact us here:
               </p>
-              <div className="space-y-3 sm:space-y-4">
+              <form onSubmit={handleSubmit1} className="space-y-3 sm:space-y-4">
                 <div>
                   <input
                     type="text"
                     placeholder="Enter your Name"
                     value={formData1.name}
-                    onChange={(e) => setFormData1({...formData1, name: e.target.value})}
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:border-[#1F6367] focus:ring-2 focus:ring-[#1F6367] focus:ring-opacity-20 transition-all"
+                    onChange={(e) => {
+                      setFormData1({...formData1, name: e.target.value});
+                      setErrors1({...errors1, name: ''});
+                    }}
+                    className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-white border-2 ${errors1.name ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:border-[#1F6367] focus:ring-2 focus:ring-[#1F6367] focus:ring-opacity-20`}
                   />
+                  {errors1.name && <p className="text-red-500 text-xs mt-1">{errors1.name}</p>}
                 </div>
                 <div>
                   <input
                     type="email"
                     placeholder="Enter your Email"
                     value={formData1.email}
-                    onChange={(e) => setFormData1({...formData1, email: e.target.value})}
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:border-[#1F6367] focus:ring-2 focus:ring-[#1F6367] focus:ring-opacity-20 transition-all"
+                    onChange={(e) => {
+                      setFormData1({...formData1, email: e.target.value});
+                      setErrors1({...errors1, email: ''});
+                    }}
+                    className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-white border-2 ${errors1.email ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:border-[#1F6367] focus:ring-2 focus:ring-[#1F6367] focus:ring-opacity-20`}
                   />
+                  {errors1.email && <p className="text-red-500 text-xs mt-1">{errors1.email}</p>}
                 </div>
                 <div>
                   <input
                     type="tel"
                     placeholder="Enter your Phone"
                     value={formData1.phone}
-                    onChange={(e) => setFormData1({...formData1, phone: e.target.value})}
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:border-[#1F6367] focus:ring-2 focus:ring-[#1F6367] focus:ring-opacity-20 transition-all"
+                    onChange={(e) => {
+                      setFormData1({...formData1, phone: e.target.value});
+                      setErrors1({...errors1, phone: ''});
+                    }}
+                    className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-white border-2 ${errors1.phone ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:border-[#1F6367] focus:ring-2 focus:ring-[#1F6367] focus:ring-opacity-20`}
                   />
+                  {errors1.phone && <p className="text-red-500 text-xs mt-1">{errors1.phone}</p>}
                 </div>
                 <div>
                   <textarea
                     placeholder="Enter your Message"
                     value={formData1.message}
-                    onChange={(e) => setFormData1({...formData1, message: e.target.value})}
+                    onChange={(e) => {
+                      setFormData1({...formData1, message: e.target.value});
+                      setErrors1({...errors1, message: ''});
+                    }}
                     rows="4"
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:border-[#1F6367] focus:ring-2 focus:ring-[#1F6367] focus:ring-opacity-20 transition-all resize-none"
+                    className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-white border-2 ${errors1.message ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:border-[#1F6367] focus:ring-2 focus:ring-[#1F6367] focus:ring-opacity-20 resize-none`}
                   ></textarea>
+                  {errors1.message && <p className="text-red-500 text-xs mt-1">{errors1.message}</p>}
                 </div>
+                {successMessage1 && <p className="text-green-600 text-sm mt-2">{successMessage1}</p>}
                 <div className="flex justify-end">
                   <button
-                    onClick={handleSubmit1}
+                    type="submit"
                     className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-[#E63946] to-[#d62835] hover:from-[#d62835] hover:to-[#c61729] text-white rounded-lg text-xs sm:text-sm font-semibold transition-all transform hover:scale-105 shadow-lg"
                   >
                     Submit
                   </button>
                 </div>
-              </div>
+              </form>
             </div>
 
             {/* Form 2 - Employers */}
@@ -196,91 +251,127 @@ const ContactUs = () => {
                 If you're looking for talent, contact<br />
                 us here:
               </p>
-              <div className="space-y-3 sm:space-y-4">
+              <form onSubmit={handleSubmit2} className="space-y-3 sm:space-y-4">
                 {/* Mobile: Stack all fields vertically */}
                 <div className="block sm:hidden space-y-3">
                   <input
                     type="text"
                     placeholder="Enter your Name"
                     value={formData2.name}
-                    onChange={(e) => setFormData2({...formData2, name: e.target.value})}
-                    className="w-full px-3 py-2 bg-white border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-500 text-xs focus:outline-none focus:border-[#E63946] focus:ring-2 focus:ring-[#E63946] focus:ring-opacity-20 transition-all"
+                    onChange={(e) => {
+                      setFormData2({...formData2, name: e.target.value});
+                      setErrors2({...errors2, name: ''});
+                    }}
+                    className={`w-full px-3 py-2 bg-white border-2 ${errors2.name ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-xs focus:outline-none focus:border-[#E63946] focus:ring-2 focus:ring-[#E63946] focus:ring-opacity-20`}
                   />
+                  {errors2.name && <p className="text-red-500 text-xs mt-1">{errors2.name}</p>}
                   <input
                     type="email"
                     placeholder="Enter your Email"
                     value={formData2.email}
-                    onChange={(e) => setFormData2({...formData2, email: e.target.value})}
-                    className="w-full px-3 py-2 bg-white border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-500 text-xs focus:outline-none focus:border-[#E63946] focus:ring-2 focus:ring-[#E63946] focus:ring-opacity-20 transition-all"
+                    onChange={(e) => {
+                      setFormData2({...formData2, email: e.target.value});
+                      setErrors2({...errors2, email: ''});
+                    }}
+                    className={`w-full px-3 py-2 bg-white border-2 ${errors2.email ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-xs focus:outline-none focus:border-[#E63946] focus:ring-2 focus:ring-[#E63946] focus:ring-opacity-20`}
                   />
+                  {errors2.email && <p className="text-red-500 text-xs mt-1">{errors2.email}</p>}
                   <input
                     type="tel"
                     placeholder="Enter your Phone"
                     value={formData2.phone}
-                    onChange={(e) => setFormData2({...formData2, phone: e.target.value})}
-                    className="w-full px-3 py-2 bg-white border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-500 text-xs focus:outline-none focus:border-[#E63946] focus:ring-2 focus:ring-[#E63946] focus:ring-opacity-20 transition-all"
+                    onChange={(e) => {
+                      setFormData2({...formData2, phone: e.target.value});
+                      setErrors2({...errors2, phone: ''});
+                    }}
+                    className={`w-full px-3 py-2 bg-white border-2 ${errors2.phone ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-xs focus:outline-none focus:border-[#E63946] focus:ring-2 focus:ring-[#E63946] focus:ring-opacity-20`}
                   />
+                  {errors2.phone && <p className="text-red-500 text-xs mt-1">{errors2.phone}</p>}
                   <textarea
                     placeholder="Enter your Message"
                     value={formData2.message}
-                    onChange={(e) => setFormData2({...formData2, message: e.target.value})}
+                    onChange={(e) => {
+                      setFormData2({...formData2, message: e.target.value});
+                      setErrors2({...errors2, message: ''});
+                    }}
                     rows="4"
-                    className="w-full px-3 py-2 bg-white border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-500 text-xs focus:outline-none focus:border-[#E63946] focus:ring-2 focus:ring-[#E63946] focus:ring-opacity-20 transition-all resize-none"
+                    className={`w-full px-3 py-2 bg-white border-2 ${errors2.message ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-xs focus:outline-none focus:border-[#E63946] focus:ring-2 focus:ring-[#E63946] focus:ring-opacity-20 resize-none`}
                   ></textarea>
+                  {errors2.message && <p className="text-red-500 text-xs mt-1">{errors2.message}</p>}
+                  {successMessage2 && <p className="text-green-600 text-sm mt-2">{successMessage2}</p>}
                   <button
-                    onClick={handleSubmit2}
+                    type="submit"
                     className="w-full px-6 py-2.5 bg-gradient-to-r from-[#1F6367] to-[#164d50] hover:from-[#164d50] hover:to-[#0d3436] text-white rounded-lg text-xs font-semibold transition-all transform hover:scale-105 shadow-lg"
                   >
                     Submit
                   </button>
                 </div>
 
-                {/* Desktop: Original grid layout */}
-                <div className="hidden sm:block">
-                  <div className="grid grid-cols-2 gap-4">
+                {/* Desktop: Stack all fields vertically */}
+                <div className="hidden sm:block space-y-3 sm:space-y-4">
+                  <div>
                     <input
                       type="text"
                       placeholder="Enter your Name"
                       value={formData2.name}
-                      onChange={(e) => setFormData2({...formData2, name: e.target.value})}
-                      className="px-4 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-500 text-sm focus:outline-none focus:border-[#E63946] focus:ring-2 focus:ring-[#E63946] focus:ring-opacity-20 transition-all"
+                      onChange={(e) => {
+                        setFormData2({...formData2, name: e.target.value});
+                        setErrors2({...errors2, name: ''});
+                      }}
+                      className={`w-full px-4 py-3 bg-white border-2 ${errors2.name ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-sm focus:outline-none focus:border-[#E63946] focus:ring-2 focus:ring-[#E63946] focus:ring-opacity-20`}
                     />
-                    <textarea
-                      placeholder="Enter your Message"
-                      value={formData2.message}
-                      onChange={(e) => setFormData2({...formData2, message: e.target.value})}
-                      rows="4"
-                      className="px-4 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-500 text-sm focus:outline-none focus:border-[#E63946] focus:ring-2 focus:ring-[#E63946] focus:ring-opacity-20 transition-all resize-none row-span-2"
-                    ></textarea>
+                    {errors2.name && <p className="text-red-500 text-xs mt-1">{errors2.name}</p>}
                   </div>
-                  <div className="grid grid-cols-2 gap-4 mt-4">
+                  <div>
                     <input
                       type="email"
                       placeholder="Enter your Email"
                       value={formData2.email}
-                      onChange={(e) => setFormData2({...formData2, email: e.target.value})}
-                      className="px-4 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-500 text-sm focus:outline-none focus:border-[#E63946] focus:ring-2 focus:ring-[#E63946] focus:ring-opacity-20 transition-all"
+                      onChange={(e) => {
+                        setFormData2({...formData2, email: e.target.value});
+                        setErrors2({...errors2, email: ''});
+                      }}
+                      className={`w-full px-4 py-3 bg-white border-2 ${errors2.email ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-sm focus:outline-none focus:border-[#E63946] focus:ring-2 focus:ring-[#E63946] focus:ring-opacity-20`}
                     />
+                    {errors2.email && <p className="text-red-500 text-xs mt-1">{errors2.email}</p>}
                   </div>
-                  <div className="grid grid-cols-2 gap-4 mt-4">
+                  <div>
                     <input
                       type="tel"
                       placeholder="Enter your Phone"
                       value={formData2.phone}
-                      onChange={(e) => setFormData2({...formData2, phone: e.target.value})}
-                      className="px-4 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-500 text-sm focus:outline-none focus:border-[#E63946] focus:ring-2 focus:ring-[#E63946] focus:ring-opacity-20 transition-all"
+                      onChange={(e) => {
+                        setFormData2({...formData2, phone: e.target.value});
+                        setErrors2({...errors2, phone: ''});
+                      }}
+                      className={`w-full px-4 py-3 bg-white border-2 ${errors2.phone ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-sm focus:outline-none focus:border-[#E63946] focus:ring-2 focus:ring-[#E63946] focus:ring-opacity-20`}
                     />
-                    <div className="flex justify-end">
-                      <button
-                        onClick={handleSubmit2}
-                        className="px-8 py-3 bg-gradient-to-r from-[#1F6367] to-[#164d50] hover:from-[#164d50] hover:to-[#0d3436] text-white rounded-lg text-sm font-semibold transition-all transform hover:scale-105 shadow-lg"
-                      >
-                        Submit
-                      </button>
-                    </div>
+                    {errors2.phone && <p className="text-red-500 text-xs mt-1">{errors2.phone}</p>}
+                  </div>
+                  <div>
+                    <textarea
+                      placeholder="Enter your Message"
+                      value={formData2.message}
+                      onChange={(e) => {
+                        setFormData2({...formData2, message: e.target.value});
+                        setErrors2({...errors2, message: ''});
+                      }}
+                      rows="4"
+                      className={`w-full px-4 py-3 bg-white border-2 ${errors2.message ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-sm focus:outline-none focus:border-[#E63946] focus:ring-2 focus:ring-[#E63946] focus:ring-opacity-20 resize-none`}
+                    ></textarea>
+                    {errors2.message && <p className="text-red-500 text-xs mt-1">{errors2.message}</p>}
+                  </div>
+                  {successMessage2 && <p className="text-green-600 text-sm mt-2">{successMessage2}</p>}
+                  <div className="flex justify-end">
+                    <button
+                      type="submit"
+                      className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-[#1F6367] to-[#164d50] hover:from-[#164d50] hover:to-[#0d3436] text-white rounded-lg text-sm font-semibold transition-all transform hover:scale-105 shadow-lg"
+                    >
+                      Submit
+                    </button>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>

@@ -15,37 +15,10 @@ const JobfountFooter = () => {
             <p className="text-xs text-gray-500">© 2025 JobFount</p>
           </div>
 
-          {/* Footer Links */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 md:gap-12 w-full md:w-auto">
-            
-            {/* About */}
-            <div>
-              <h4 className="text-xs sm:text-sm font-semibold text-gray-900 mb-2 sm:mb-3">About</h4>
-              <ul className="space-y-1.5 sm:space-y-2">
-                <li>
-                  <a href="#" className="text-xs text-gray-600 hover:text-gray-900 transition-colors">About Us</a>
-                </li>
-                <li>
-                  <a href="#" className="text-xs text-gray-600 hover:text-gray-900 transition-colors">FAQCenter</a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Support */}
-            <div>
-              <h4 className="text-xs sm:text-sm font-semibold text-gray-900 mb-2 sm:mb-3">Support</h4>
-              <ul className="space-y-1.5 sm:space-y-2">
-                <li>
-                  <a href="#" className="text-xs text-gray-600 hover:text-gray-900 transition-colors">Help Center</a>
-                </li>
-                <li>
-                  <a href="#" className="text-xs text-gray-600 hover:text-gray-900 transition-colors">FAQs</a>
-                </li>
-              </ul>
-            </div>
-
+          {/* Footer Links and Social */}
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-6 sm:space-y-0 w-full md:w-auto">
             {/* Quick Links */}
-            <div>
+            {/* <div>
               <h4 className="text-xs sm:text-sm font-semibold text-gray-900 mb-2 sm:mb-3">Quick Links</h4>
               <ul className="space-y-1.5 sm:space-y-2">
                 <li>
@@ -55,10 +28,10 @@ const JobfountFooter = () => {
                   <a href="#" className="text-xs text-gray-600 hover:text-gray-900 transition-colors">Post a Job</a>
                 </li>
               </ul>
-            </div>
+            </div> */}
 
             {/* Social */}
-            <div>
+            <div className="ml-auto"> {/* ml-auto pushes it to the right */}
               <h4 className="text-xs sm:text-sm font-semibold text-gray-900 mb-2 sm:mb-3">Social</h4>
               <div className="flex items-center space-x-3 sm:space-x-3">
                 <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors p-1 hover:bg-gray-100 rounded">
