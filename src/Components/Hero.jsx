@@ -95,13 +95,13 @@ export default function Hero({ prometricLicensingRef }) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 font-['Inter',sans-serif]">
-      <header className="bg-white shadow-sm animate-[fadeIn_0.6s_ease-out] sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 font-['Inter',sans-serif] w-full overflow-x-hidden">
+      <header className="bg-white shadow-sm animate-[fadeIn_0.6s_ease-out] sticky top-0 z-50 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex justify-between items-center h-16 sm:h-20">
             <div className="flex items-center animate-[slideRight_0.8s_ease-out]">
               <a href="#" className="flex items-center">
-                <img src={JobfountLogo} alt="Jobfount Logo" className="h-20 w-auto" />
+                <img src={JobfountLogo} alt="Jobfount Logo" className="h-9 sm:h-20 w-auto" />
               </a>
             </div>
 
@@ -158,24 +158,28 @@ export default function Hero({ prometricLicensingRef }) {
         </div>
       </header>
 
-      <section id="hero-section" className="bg-gradient-to-b from-blue-50 via-purple-50/30 to-orange-100 pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-24 animate-[fadeIn_0.8s_ease-out]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="hero-section" className="bg-gradient-to-b from-blue-50 via-purple-50/30 to-orange-100 pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-24 animate-[fadeIn_0.8s_ease-out] w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="mb-8 sm:mb-10 lg:mb-12">
-            <div className="mb-6 sm:mb-8 text-center">
-              <SplitText
-                text="Unlocking Talent."
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-1 sm:mb-2 tracking-tight px-2 whitespace-nowrap sm:whitespace-normal"
-                delay={50}
-                duration={0.6}
-                tag="h1"
-              />
-              <SplitText
-                text="Illuminating Growth."
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight px-2 whitespace-nowrap sm:whitespace-normal"
-                delay={50}
-                duration={0.6}
-                tag="h1"
-              />
+            <div className="mb-6 sm:mb-8 text-center overflow-x-hidden">
+              <div className="inline-block min-w-0">
+                <SplitText
+                  text="Unlocking Talent."
+                  className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-1 sm:mb-2 tracking-tight"
+                  delay={50}
+                  duration={0.6}
+                  tag="h1"
+                />
+              </div>
+              <div className="inline-block min-w-0">
+                <SplitText
+                  text="Illuminating Growth."
+                  className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight"
+                  delay={50}
+                  duration={0.6}
+                  tag="h1"
+                />
+              </div>
             </div>
             
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-5xl mx-auto mb-8 sm:mb-10 leading-relaxed text-center animate-[fadeIn_1s_ease-out_0.8s_both] px-4">
@@ -232,6 +236,30 @@ export default function Hero({ prometricLicensingRef }) {
 
       <style dangerouslySetInnerHTML={{__html: `
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        
+        * {
+          box-sizing: border-box;
+        }
+        
+        html, body {
+          width: 100%;
+          max-width: 100vw;
+          overflow-x: hidden;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .split-char {
+          display: inline-block;
+          white-space: pre;
+        }
+        
+        @media (max-width: 640px) {
+          h1 {
+            font-size: clamp(1.5rem, 8vw, 3rem) !important;
+            line-height: 1.2;
+          }
+        }
         
         @keyframes fadeIn {
           from {
