@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, Linkedin, Instagram } from 'lucide-react';
+import JobfountLogo from '../assets/Jobfount.jpeg'; // Import the image
 
 const JobfountFooter = () => {
   return (
@@ -10,7 +11,7 @@ const JobfountFooter = () => {
           {/* Logo and Copyright */}
           <div className="flex flex-col space-y-2 sm:space-y-3">
             <div className="flex items-center space-x-2">
-              <img src="/src/assets/Jobfount.jpeg" alt="JobFount Logo" className="h-9 sm:h-20 w-auto" />
+              <img src={JobfountLogo} alt="JobFount Logo" className="h-9 sm:h-20 w-auto" />
             </div>
             <p className="text-xs text-gray-500">© 2025 JobFount</p>
           </div>
