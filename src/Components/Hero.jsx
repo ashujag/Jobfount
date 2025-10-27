@@ -135,7 +135,7 @@ export default function Hero({ prometricLicensingRef }) {
                 Find Jobs
               </button>
               <button 
-                className="bg-[#164d61] hover:bg-[#164d50] text-white px-8 sm:px-10 py-3 sm:py-3.5 rounded-lg font-semibold shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 animate-[slideUp_0.8s_ease-out_1.1s_both] text-sm sm:text-base" 
+                className="bg-[#0a1436ff] hover:bg-[#164d50] text-white px-8 sm:px-10 py-3 sm:py-3.5 rounded-lg font-semibold shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 animate-[slideUp_0.8s_ease-out_1.1s_both] text-sm sm:text-base" 
                 onClick={handleHireTalentClick}
               >
                 Hire Talent
@@ -155,12 +155,12 @@ export default function Hero({ prometricLicensingRef }) {
               placeholder="Job title or keyword"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="flex-1 px-4 sm:px-5 py-3 sm:py-3.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#164d61] focus:border-transparent transition-all duration-300 text-gray-700 placeholder-gray-400 text-sm sm:text-base"
+              className="flex-1 px-4 sm:px-5 py-3 sm:py-3.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0a1436ff] focus:border-transparent transition-all duration-300 text-gray-700 placeholder-gray-400 text-sm sm:text-base"
             />
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="px-4 sm:px-5 py-3 sm:py-3.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#164d61] focus:border-transparent bg-white transition-all duration-300 text-gray-700 cursor-pointer text-sm sm:text-base"
+              className="px-4 sm:px-5 py-3 sm:py-3.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0a1436ff] focus:border-transparent bg-white transition-all duration-300 text-gray-700 cursor-pointer text-sm sm:text-base"
             >
               <option>All categories</option>
               <option>Software</option>

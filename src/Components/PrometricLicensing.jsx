@@ -45,7 +45,7 @@ const PrometricLicensing = React.forwardRef((props, ref) => {
       icon: <FileCheck className="w-6 h-6 sm:w-7 sm:h-7" />,
       title: "Exam Eligibility Verification",
       description: "Complete document review and eligibility verification for all major licensing authorities",
-      color: "#164d61",
+      color: "#0a1436ff",
       hoverColor: "#164d51"
     },
     {
@@ -59,7 +59,7 @@ const PrometricLicensing = React.forwardRef((props, ref) => {
       icon: <GraduationCap className="w-6 h-6 sm:w-7 sm:h-7" />,
       title: "Comprehensive Exam Guidance",
       description: "Expert guidance for DHA, MOH, HAAD, QCHP, SCFHS and other international licensing exams",
-      color: "#164d61",
+      color: "#0a1436ff",
       hoverColor: "#164d51"
     },
     {
@@ -73,7 +73,7 @@ const PrometricLicensing = React.forwardRef((props, ref) => {
       icon: <Briefcase className="w-6 h-6 sm:w-7 sm:h-7" />,
       title: "Post-Licensing Placement",
       description: "Exclusive job placement opportunities with leading healthcare organizations after successful licensing",
-      color: "#164d61",
+      color: "#0a1436ff",
       hoverColor: "#164d51"
     },
     {
@@ -120,7 +120,7 @@ const PrometricLicensing = React.forwardRef((props, ref) => {
             </h1>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-2 leading-tight px-4" 
                 style={{ 
-                  backgroundImage: `linear-gradient(135deg, #164d61 0%, #E63946 100%)`,
+                  backgroundImage: `linear-gradient(135deg, #0a1436ff 0%, #E63946 100%)`,
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text'
@@ -160,10 +160,10 @@ const PrometricLicensing = React.forwardRef((props, ref) => {
                 style={{ opacity: 0, transform: 'translateY(30px)' }}
               >
                 <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-5 sm:p-6 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                  <div className="flex items-center justify-center mb-2 sm:mb-3" style={{ color: index % 2 === 0 ? '#164d61' : '#E63946' }}>
+                  <div className="flex items-center justify-center mb-2 sm:mb-3" style={{ color: index % 2 === 0 ? '#0a1436ff' : '#E63946' }}>
                     {stat.icon}
                   </div>
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-1 sm:mb-2" style={{ color: index % 2 === 0 ? '#164d61' : '#E63946' }}>
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-1 sm:mb-2" style={{ color: index % 2 === 0 ? '#0a1436ff' : '#E63946' }}>
                     {stat.number}
                   </div>
                   <div className="text-xs sm:text-sm font-medium text-gray-600">
@@ -181,7 +181,7 @@ const PrometricLicensing = React.forwardRef((props, ref) => {
             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
               Our Support Includes
             </h3>
-            <div className="w-20 sm:w-24 h-1 sm:h-1.5 mx-auto rounded-full" style={{ background: `linear-gradient(to right, #164d61, #E63946)` }}></div>
+            <div className="w-20 sm:w-24 h-1 sm:h-1.5 mx-auto rounded-full" style={{ background: `linear-gradient(to right, #0a1436ff, #E63946)` }}></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
@@ -238,7 +238,7 @@ const PrometricLicensing = React.forwardRef((props, ref) => {
           style={{ opacity: 0, transform: 'translateY(30px)' }}
         >
           <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-8 sm:p-12 lg:p-16 max-w-5xl mx-auto border border-gray-100 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1.5 sm:h-2 bg-gradient-to-r" style={{ background: `linear-gradient(to right, #164d61, #E63946)` }}></div>
+            <div className="absolute top-0 left-0 w-full h-1.5 sm:h-2 bg-gradient-to-r" style={{ background: `linear-gradient(to right, #0a1436ff, #E63946)` }}></div>
             
             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
               Ready to Start Your Licensing Journey?
@@ -252,8 +252,8 @@ const PrometricLicensing = React.forwardRef((props, ref) => {
                 onClick={handleContactClick}
                 className="group w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 text-white font-semibold rounded-full shadow-lg hover:shadow-2xl transform hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center space-x-2 sm:space-x-3 text-base sm:text-lg"
                 style={{ backgroundColor: '#164d61' }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#164d51'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#164d61'}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#0a1436ff'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#0a1436ff'}
               >
                 <span>Get Licensing Help</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />

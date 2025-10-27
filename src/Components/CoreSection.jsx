@@ -10,9 +10,9 @@ const CoreServices = () => {
       icon: <Briefcase className="w-8 h-8" />,
       title: "Talent Solutions",
       description: "End-to-end hiring for startups, SMEs, and corporates — from entry to senior levels.",
-      color: "bg-[#164d61]",
+      color: "bg-[#0a1436ff]",
       microCopy: "From chaos to hires",
-      gradient: "from-[#164d61] to-[#164d50]"
+      gradient: "from-[#0a1436ff] "
     },
     {
       icon: <BarChart3 className="w-8 h-8" />,
@@ -20,15 +20,15 @@ const CoreServices = () => {
       description: "Build dashboards and reports that help businesses track performance and make data-driven decisions.",
       color: "bg-[#E63946]",
       microCopy: "Data drives decisions",
-      gradient: "from-[#E63946] to-[#d62835]"
+      gradient: "from-[#E63946] "
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "Career Support for Candidates",
       description: "Resume guidance, interview coaching, and placement assistance — 100% transparent and genuine.",
-      color: "bg-[#164d61]",
+      color: "bg-[#0a1436ff]",
       microCopy: "Growth, guided",
-      gradient: "from-[#164d61] to-[#164d50]"
+      gradient: "from-[#0a1436ff] "
     },
     {
       icon: <Award className="w-8 h-8" />,
@@ -36,7 +36,7 @@ const CoreServices = () => {
       description: "Helping healthcare and IT professionals apply, prepare, and succeed in Prometric & global licensing exams. (Jobfount is not a test center; we provide guidance and coordination support.)",
       color: "bg-[#E63946]",
       microCopy: "Excellence, certified",
-      gradient: "from-[#E63946] to-[#d62835]"
+      gradient: "from-[#E63946] "
     }
   ];
 
