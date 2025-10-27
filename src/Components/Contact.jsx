@@ -69,8 +69,8 @@ const ContactUs = () => {
       {/* Decorative Phone Elements with brand colors */}
       <div className="absolute top-0 right-0 w-32 sm:w-48 md:w-64 h-48 sm:h-72 md:h-96 opacity-70">
         <svg viewBox="0 0 200 400" className="w-full h-full">
-          <ellipse cx="150" cy="60" rx="50" ry="50" fill="#1F6367" opacity="0.8"/>
-          <circle cx="150" cy="60" r="25" fill="#1F6367" opacity="0.6"/>
+          <ellipse cx="150" cy="60" rx="50" ry="50" fill="#164d61" opacity="0.8"/>
+          <circle cx="150" cy="60" r="25" fill="#164d61" opacity="0.6"/>
           <circle cx="150" cy="60" r="15" fill="#E63946" opacity="0.4"/>
           <circle cx="150" cy="60" r="8" fill="#E63946" opacity="0.3"/>
         </svg>
@@ -78,8 +78,8 @@ const ContactUs = () => {
 
       <div className="absolute bottom-0 right-0 w-32 sm:w-48 md:w-64 h-48 sm:h-72 md:h-96 opacity-70">
         <svg viewBox="0 0 200 400" className="w-full h-full">
-          <ellipse cx="150" cy="340" rx="50" ry="50" fill="#1F6367" opacity="0.8"/>
-          <circle cx="150" cy="340" r="25" fill="#1F6367" opacity="0.6"/>
+          <ellipse cx="150" cy="340" rx="50" ry="50" fill="#164d61" opacity="0.8"/>
+          <circle cx="150" cy="340" r="25" fill="#164d61" opacity="0.6"/>
           <circle cx="150" cy="340" r="15" fill="#E63946" opacity="0.4"/>
           <circle cx="150" cy="340" r="8" fill="#E63946" opacity="0.3"/>
         </svg>
@@ -90,7 +90,7 @@ const ContactUs = () => {
         <svg width="100" height="100%" className="w-full h-full">
           <path
             d="M 50 0 Q 30 50, 50 100 T 50 200 T 50 300 T 50 400 T 50 500"
-            stroke="#1F6367"
+            stroke="#164d61"
             strokeWidth="8"
             fill="none"
             opacity="0.5"
@@ -101,7 +101,7 @@ const ContactUs = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 relative z-10">
         {/* Header */}
         <div className="mb-8 sm:mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1F6367] mb-2 sm:mb-3 tracking-wide">CONTACT US</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#164d61] mb-2 sm:mb-3 tracking-wide">CONTACT US</h1>
           <p className="text-gray-700 text-base sm:text-lg italic">Over the phone or online</p>
         </div>
 
@@ -111,13 +111,13 @@ const ContactUs = () => {
           <div className="flex flex-col h-full">
             {/* Contact Info */}
             <div className="bg-transparent mb-6 sm:mb-8 space-y-3 sm:space-y-4">
-              <div className="flex items-center gap-2 sm:gap-3 text-[#1F6367]">
-                <div className="bg-[#1F6367] p-1.5 sm:p-2 rounded-lg">
+              <div className="flex items-center gap-2 sm:gap-3 text-[#164d61]">
+                <div className="bg-[#164d61] p-1.5 sm:p-2 rounded-lg">
                   <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
                 <span className="text-xs sm:text-sm font-medium break-all">info@Jobfount.in</span>
               </div>
-              <div className="flex items-center gap-2 sm:gap-3 text-[#1F6367]">
+              <div className="flex items-center gap-2 sm:gap-3 text-[#164d61]">
                 <div className="bg-[#E63946] p-1.5 sm:p-2 rounded-lg">
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
@@ -126,7 +126,7 @@ const ContactUs = () => {
             </div>
 
             {/* Address */}
-            <div className="mb-6 sm:mb-8 bg-white bg-opacity-60 backdrop-blur-sm p-3 sm:p-4 rounded-lg border-l-4 border-[#1F6367]">
+            <div className="mb-6 sm:mb-8 bg-white bg-opacity-60 backdrop-blur-sm p-3 sm:p-4 rounded-lg border-l-4 border-[#164d61]">
               <p className="text-gray-800 text-xs sm:text-sm leading-relaxed font-medium">
                 No 524, CTH Road<br />
                 Pattabiram, Chennai 600072
@@ -134,13 +134,13 @@ const ContactUs = () => {
             </div>
 
             {/* Map */}
-            <div className="bg-white rounded-xl shadow-xl overflow-hidden border-2 border-[#1F6367] flex-grow h-64 sm:h-80 lg:h-auto lg:min-h-[400px]">
-              <div className="flex border-b-2 border-[#1F6367]">
+            <div className="bg-white rounded-xl shadow-xl overflow-hidden border-2 border-[#164d61] flex-grow h-64 sm:h-80 lg:h-auto lg:min-h-[400px]">
+              <div className="flex border-b-2 border-[#164d61]">
                 <button
                   onClick={() => setMapView('map')}
                   className={`flex-1 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold transition-all ${
                     mapView === 'map' 
-                      ? 'bg-[#1F6367] text-white' 
+                      ? 'bg-[#164d61] text-white' 
                       : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
                   }`}
                 >
@@ -150,7 +150,7 @@ const ContactUs = () => {
                   onClick={() => setMapView('satellite')}
                   className={`flex-1 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold transition-all ${
                     mapView === 'satellite' 
-                      ? 'bg-[#1F6367] text-white' 
+                      ? 'bg-[#164d61] text-white' 
                       : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
                   }`}
                 >
@@ -176,7 +176,7 @@ const ContactUs = () => {
           <div className="flex flex-col gap-8 sm:gap-12">
             {/* Form 1 - Job Seekers */}
             <div className="bg-white bg-opacity-70 backdrop-blur-sm p-4 sm:p-6 rounded-xl shadow-lg border-t-4 border-[#E63946] w-full">
-              <p className="text-[#1F6367] mb-4 sm:mb-6 text-xs sm:text-sm font-semibold">
+              <p className="text-[#164d61] mb-4 sm:mb-6 text-xs sm:text-sm font-semibold">
                 If you're talented and looking<br />
                 for a job, contact us here:
               </p>
@@ -190,7 +190,7 @@ const ContactUs = () => {
                       setFormData1({...formData1, name: e.target.value});
                       setErrors1({...errors1, name: ''});
                     }}
-                    className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-white border-2 ${errors1.name ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:border-[#1F6367] focus:ring-2 focus:ring-[#1F6367] focus:ring-opacity-20`}
+                    className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-white border-2 ${errors1.name ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:border-[#164d61] focus:ring-2 focus:ring-[#164d61] focus:ring-opacity-20`}
                   />
                   {errors1.name && <p className="text-red-500 text-xs mt-1">{errors1.name}</p>}
                 </div>
@@ -203,7 +203,7 @@ const ContactUs = () => {
                       setFormData1({...formData1, email: e.target.value});
                       setErrors1({...errors1, email: ''});
                     }}
-                    className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-white border-2 ${errors1.email ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:border-[#1F6367] focus:ring-2 focus:ring-[#1F6367] focus:ring-opacity-20`}
+                    className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-white border-2 ${errors1.email ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:border-[#164d61] focus:ring-2 focus:ring-[#164d61] focus:ring-opacity-20`}
                   />
                   {errors1.email && <p className="text-red-500 text-xs mt-1">{errors1.email}</p>}
                 </div>
@@ -216,7 +216,7 @@ const ContactUs = () => {
                       setFormData1({...formData1, phone: e.target.value});
                       setErrors1({...errors1, phone: ''});
                     }}
-                    className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-white border-2 ${errors1.phone ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:border-[#1F6367] focus:ring-2 focus:ring-[#1F6367] focus:ring-opacity-20`}
+                    className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-white border-2 ${errors1.phone ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:border-[#164d61] focus:ring-2 focus:ring-[#164d61] focus:ring-opacity-20`}
                   />
                   {errors1.phone && <p className="text-red-500 text-xs mt-1">{errors1.phone}</p>}
                 </div>
@@ -229,7 +229,7 @@ const ContactUs = () => {
                       setErrors1({...errors1, message: ''});
                     }}
                     rows="4"
-                    className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-white border-2 ${errors1.message ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:border-[#1F6367] focus:ring-2 focus:ring-[#1F6367] focus:ring-opacity-20 resize-none`}
+                    className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-white border-2 ${errors1.message ? 'border-red-500' : 'border-gray-200'} rounded-lg text-gray-800 placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:border-[#164d61] focus:ring-2 focus:ring-[#164d61] focus:ring-opacity-20 resize-none`}
                   ></textarea>
                   {errors1.message && <p className="text-red-500 text-xs mt-1">{errors1.message}</p>}
                 </div>
@@ -246,8 +246,8 @@ const ContactUs = () => {
             </div>
 
             {/* Form 2 - Employers */}
-            <div className="bg-white bg-opacity-70 backdrop-blur-sm p-4 sm:p-6 rounded-xl shadow-lg border-t-4 border-[#1F6367] w-full">
-              <p className="text-[#1F6367] mb-4 sm:mb-6 text-xs sm:text-sm font-semibold">
+            <div className="bg-white bg-opacity-70 backdrop-blur-sm p-4 sm:p-6 rounded-xl shadow-lg border-t-4 border-[#164d61] w-full">
+              <p className="text-[#164d61] mb-4 sm:mb-6 text-xs sm:text-sm font-semibold">
                 If you're looking for talent, contact<br />
                 us here:
               </p>
@@ -301,7 +301,7 @@ const ContactUs = () => {
                   {successMessage2 && <p className="text-green-600 text-sm mt-2">{successMessage2}</p>}
                   <button
                     type="submit"
-                    className="w-full px-6 py-2.5 bg-gradient-to-r from-[#1F6367] to-[#164d50] hover:from-[#164d50] hover:to-[#0d3436] text-white rounded-lg text-xs font-semibold transition-all transform hover:scale-105 shadow-lg"
+                    className="w-full px-6 py-2.5 bg-gradient-to-r from-[#164d61] to-[#164d50] hover:from-[#164d50] hover:to-[#0d3436] text-white rounded-lg text-xs font-semibold transition-all transform hover:scale-105 shadow-lg"
                   >
                     Submit
                   </button>
@@ -365,7 +365,7 @@ const ContactUs = () => {
                   <div className="flex justify-end">
                     <button
                       type="submit"
-                      className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-[#1F6367] to-[#164d50] hover:from-[#164d50] hover:to-[#0d3436] text-white rounded-lg text-sm font-semibold transition-all transform hover:scale-105 shadow-lg"
+                      className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-[#164d61] to-[#164d50] hover:from-[#164d50] hover:to-[#0d3436] text-white rounded-lg text-sm font-semibold transition-all transform hover:scale-105 shadow-lg"
                     >
                       Submit
                     </button>

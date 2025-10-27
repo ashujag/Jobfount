@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import JobfountLogo from '../assets/Jobfount.jpeg';
 import { Menu, X } from 'lucide-react';
+import Header from './Header.jsx';
 
 const SplitText = ({
   text,
@@ -96,69 +97,9 @@ export default function Hero({ prometricLicensingRef }) {
 
   return (
     <div className="min-h-screen bg-gray-50 font-['Inter',sans-serif] w-full overflow-x-hidden">
-      <header className="bg-white shadow-sm animate-[fadeIn_0.6s_ease-out] sticky top-0 z-50 w-full">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="flex justify-between items-center h-16 sm:h-20">
-            <div className="flex items-center animate-[slideRight_0.8s_ease-out]">
-              <a href="#" className="flex items-center">
-                <img src={JobfountLogo} alt="Jobfount Logo" className="h-9 sm:h-20 w-auto" />
-              </a>
-            </div>
+      <Header prometricLicensingRef={prometricLicensingRef} />
 
-            <nav className="hidden md:flex space-x-1 animate-[fadeIn_1s_ease-out_0.3s_both]">
-              <a href="#hero-section" className="text-[#1F6367] bg-[#1F6367]/5 hover:bg-[#1F6367]/10 px-4 py-2 rounded-lg font-medium transition-all duration-300">
-                Home
-              </a>
-              <a href="/findjobs" className="text-gray-600 hover:text-[#1F6367] hover:bg-gray-50 px-4 py-2 rounded-lg font-medium transition-all duration-300" onClick={handleFindJobsClick}>
-                Find Jobs
-              </a>
-              <a href="/hiretalents" className="text-gray-600 hover:text-[#1F6367] hover:bg-gray-50 px-4 py-2 rounded-lg font-medium transition-all duration-300" onClick={handleHireTalentClick}>
-                Hire Talents
-              </a>
-              <a href="#contact-section" className="text-gray-600 hover:text-[#1F6367] hover:bg-gray-50 px-4 py-2 rounded-lg font-medium transition-all duration-300">
-                Contact Us
-              </a>
-            </nav>
-
-            <div className="flex items-center gap-3">
-              <button className="hidden sm:block bg-[#E63946] hover:bg-[#d62835] text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg font-semibold shadow-lg hover:shadow-xl transform transition-all hover:scale-105 animate-[slideLeft_0.8s_ease-out] text-sm sm:text-base">
-                Post a Job
-              </button>
-              
-              <button 
-                className="md:hidden p-2 text-gray-600 hover:text-[#1F6367] hover:bg-gray-50 rounded-lg transition-all"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
-            </div>
-          </div>
-
-          {mobileMenuOpen && (
-            <div className="md:hidden py-4 animate-[slideDown_0.3s_ease-out]">
-              <nav className="flex flex-col space-y-2">
-                <a href="#hero-section" className="text-[#1F6367] bg-[#1F6367]/5 hover:bg-[#1F6367]/10 px-4 py-3 rounded-lg font-medium transition-all duration-300" onClick={() => setMobileMenuOpen(false)}>
-                  Home
-                </a>
-                <a href="#" className="text-gray-600 hover:text-[#1F6367] hover:bg-gray-50 px-4 py-3 rounded-lg font-medium transition-all duration-300" onClick={handleFindJobsClick}>
-                  Find Jobs
-                </a>
-                <a href="/hiretalents" className="text-gray-600 hover:text-[#1F6367] hover:bg-gray-50 px-4 py-3 rounded-lg font-medium transition-all duration-300" onClick={handleHireTalentClick}>
-                  Hire Talents
-                </a>
-                <a href="#contact-section" className="text-gray-600 hover:text-[#1F6367] hover:bg-gray-50 px-4 py-3 rounded-lg font-medium transition-all duration-300" onClick={() => setMobileMenuOpen(false)}>
-                  Contact Us
-                </a>
-                <button className="bg-[#E63946] hover:bg-[#d62835] text-white px-4 py-3 rounded-lg font-semibold shadow-lg w-full text-left">
-                  Post a Job
-                </button>
-              </nav>
-            </div>
-          )}
-        </div>
-      </header>
-
-      <section id="hero-section" className="bg-gradient-to-b from-blue-50 via-purple-50/30 to-orange-100 pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-24 animate-[fadeIn_0.8s_ease-out] w-full">
+     <section id="hero-section" className="bg-gradient-to-b from-blue-50 via-purple-50/30 to-orange-100 pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 lg:pb-24 animate-[fadeIn_0.8s_ease-out] w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="mb-8 sm:mb-10 lg:mb-12">
             <div className="mb-6 sm:mb-8 text-center overflow-x-hidden">
@@ -194,7 +135,7 @@ export default function Hero({ prometricLicensingRef }) {
                 Find Jobs
               </button>
               <button 
-                className="bg-[#1F6367] hover:bg-[#164d50] text-white px-8 sm:px-10 py-3 sm:py-3.5 rounded-lg font-semibold shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 animate-[slideUp_0.8s_ease-out_1.1s_both] text-sm sm:text-base" 
+                className="bg-[#164d61] hover:bg-[#164d50] text-white px-8 sm:px-10 py-3 sm:py-3.5 rounded-lg font-semibold shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 animate-[slideUp_0.8s_ease-out_1.1s_both] text-sm sm:text-base" 
                 onClick={handleHireTalentClick}
               >
                 Hire Talent
@@ -214,12 +155,12 @@ export default function Hero({ prometricLicensingRef }) {
               placeholder="Job title or keyword"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="flex-1 px-4 sm:px-5 py-3 sm:py-3.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1F6367] focus:border-transparent transition-all duration-300 text-gray-700 placeholder-gray-400 text-sm sm:text-base"
+              className="flex-1 px-4 sm:px-5 py-3 sm:py-3.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#164d61] focus:border-transparent transition-all duration-300 text-gray-700 placeholder-gray-400 text-sm sm:text-base"
             />
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="px-4 sm:px-5 py-3 sm:py-3.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1F6367] focus:border-transparent bg-white transition-all duration-300 text-gray-700 cursor-pointer text-sm sm:text-base"
+              className="px-4 sm:px-5 py-3 sm:py-3.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#164d61] focus:border-transparent bg-white transition-all duration-300 text-gray-700 cursor-pointer text-sm sm:text-base"
             >
               <option>All categories</option>
               <option>Software</option>

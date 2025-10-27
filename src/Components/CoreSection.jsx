@@ -10,9 +10,9 @@ const CoreServices = () => {
       icon: <Briefcase className="w-8 h-8" />,
       title: "Talent Solutions",
       description: "End-to-end hiring for startups, SMEs, and corporates — from entry to senior levels.",
-      color: "bg-[#1F6367]",
+      color: "bg-[#164d61]",
       microCopy: "From chaos to hires",
-      gradient: "from-[#1F6367] to-[#164d50]"
+      gradient: "from-[#164d61] to-[#164d50]"
     },
     {
       icon: <BarChart3 className="w-8 h-8" />,
@@ -26,9 +26,9 @@ const CoreServices = () => {
       icon: <Users className="w-8 h-8" />,
       title: "Career Support for Candidates",
       description: "Resume guidance, interview coaching, and placement assistance — 100% transparent and genuine.",
-      color: "bg-[#1F6367]",
+      color: "bg-[#164d61]",
       microCopy: "Growth, guided",
-      gradient: "from-[#1F6367] to-[#164d50]"
+      gradient: "from-[#164d61] to-[#164d50]"
     },
     {
       icon: <Award className="w-8 h-8" />,
@@ -60,8 +60,8 @@ const CoreServices = () => {
         <div className="bg-white rounded-2xl shadow-sm p-4 sm:p-6 lg:p-8 mb-8">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8 gap-3">
             <div>
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">Our Core Services</h2>
-              <p className="text-xs sm:text-sm text-gray-500">Navigate through our comprehensive solutions</p>
+              <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold text-gray-900 mb-1 sm:mb-2 tracking-tight">Our Core Services</h2>
+              <p className="text-xs sm:text-base text-gray-700 font-medium">Navigate through our comprehensive solutions</p>
             </div>
             <a href="#" className="text-[#E63946] hover:text-[#d62835] font-medium text-xs sm:text-sm flex items-center gap-1 whitespace-nowrap">
               Explore all services →
@@ -132,11 +132,11 @@ const CoreServices = () => {
                       <div className={`bg-gradient-to-br ${service.gradient} p-5 sm:p-6 text-white relative overflow-hidden`}>
                         <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -mr-16 -mt-16"></div>
                         <div className="relative z-10 flex items-center justify-between">
-                          <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-2.5 sm:p-3">
-                            {React.cloneElement(service.icon, { className: 'w-6 h-6 sm:w-8 sm:h-8' })}
+                          <div className="bg-white rounded-xl p-2.5 sm:p-3">
+                            {React.cloneElement(service.icon, { className: 'w-6 h-6 sm:w-8 sm:h-8 text-gray-900' })}
                           </div>
-                          <div className="text-right">
-                            <div className="text-xl sm:text-2xl font-bold opacity-30">0{index + 1}</div>
+                          <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full">
+                            <span className="text-sm font-bold text-gray-900">0{index + 1}</span>
                           </div>
                         </div>
                       </div>
@@ -149,14 +149,7 @@ const CoreServices = () => {
                           {service.description}
                         </p>
 
-                        {isActive && (
-                          <button className={`
-                            mt-3 sm:mt-4 w-full ${service.color} text-white py-2 sm:py-2.5 rounded-lg font-medium text-sm
-                            hover:opacity-90 transition-all transform hover:scale-105
-                          `}>
-                            Learn More
-                          </button>
-                        )}
+                        {isActive && null}
                       </div>
 
                       <div className={`h-1 bg-gradient-to-r ${service.gradient}`}></div>

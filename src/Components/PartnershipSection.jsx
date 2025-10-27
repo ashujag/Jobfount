@@ -27,12 +27,20 @@ const PartnershipSection = () => {
     });
   }, []);
 
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact-section');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const benefits = [
     {
       icon: <Users className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
       title: "Verified Candidates",
       description: "We bring pre-screened, qualified candidates directly to your institute or center",
-      bgColor: "#1F6367"
+      bgColor: "#164d61"
     },
     {
       icon: <FileText className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
@@ -44,7 +52,7 @@ const PartnershipSection = () => {
       icon: <Target className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
       title: "Application Flow",
       description: "Streamlined candidate pipeline management from inquiry to enrollment",
-      bgColor: "#1F6367"
+      bgColor: "#164d61"
     }
   ];
 
@@ -59,7 +67,7 @@ const PartnershipSection = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-slate-50 to-gray-100 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-10 sm:top-20 right-5 sm:right-10 w-48 sm:w-80 md:w-96 h-48 sm:h-80 md:h-96 rounded-full opacity-5" style={{ backgroundColor: '#E63946' }}></div>
-        <div className="absolute bottom-20 sm:bottom-40 left-5 sm:left-10 w-40 sm:w-64 md:w-80 h-40 sm:h-64 md:h-80 rounded-full opacity-5" style={{ backgroundColor: '#1F6367' }}></div>
+        <div className="absolute bottom-20 sm:bottom-40 left-5 sm:left-10 w-40 sm:w-64 md:w-80 h-40 sm:h-64 md:h-80 rounded-full opacity-5" style={{ backgroundColor: '#164d61' }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12 md:py-16 lg:py-20 relative z-10">
@@ -72,7 +80,7 @@ const PartnershipSection = () => {
             style={{ opacity: 0, transform: 'translateY(30px)' }}
           >
             <div className="inline-flex items-center justify-center mb-3 sm:mb-4 md:mb-6 relative">
-              <Handshake className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20" style={{ color: '#1F6367' }} />
+              <Handshake className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20" style={{ color: '#164d61' }} />
               <div className="absolute -bottom-0.5 sm:-bottom-1 -right-0.5 sm:-right-1 w-3 h-3 sm:w-4 sm:h-4 rounded-full animate-pulse" style={{ backgroundColor: '#E63946' }}></div>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-1 sm:mb-2 md:mb-4 px-4" style={{ fontFamily: 'Anton, sans-serif' }}>
@@ -81,7 +89,7 @@ const PartnershipSection = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold px-4"
                 style={{
                   fontFamily: 'Anton, sans-serif',
-                  background: 'linear-gradient(135deg, #1F6367 0%, #E63946 100%)',
+                  backgroundImage: 'linear-gradient(135deg, #164d61 0%, #E63946 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text'
@@ -139,7 +147,7 @@ const PartnershipSection = () => {
         <div className="mb-10 sm:mb-12 md:mb-16 lg:mb-24 px-4 sm:px-0">
           <div 
             className="rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 xl:p-16 text-white relative overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, #1F6367 0%, #E63946 100%)' }}
+            style={{ background: 'linear-gradient(135deg, #164d61 0%, #E63946 100%)' }}
           >
             <div className="absolute inset-0 opacity-5">
               <div className="absolute top-5 sm:top-10 right-5 sm:right-10 w-20 sm:w-28 md:w-32 h-20 sm:h-28 md:h-32 border-2 sm:border-4 border-white rounded-full"></div>
@@ -174,7 +182,7 @@ const PartnershipSection = () => {
           className="text-center transition-all duration-1000 ease-out px-4 sm:px-0"
           style={{ opacity: 0, transform: 'translateY(30px)' }}
         >
-          <div className="bg-white rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 xl:p-16 max-w-4xl mx-auto border-t-4 relative overflow-hidden" style={{ borderTopColor: '#1F6367' }}>
+          <div className="bg-white rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 xl:p-16 max-w-4xl mx-auto border-t-4 relative overflow-hidden" style={{ borderTopColor: '#164d61' }}>
             <div className="absolute top-0 right-0 w-16 sm:w-20 h-16 sm:h-20 opacity-5 rounded-bl-full" style={{ backgroundColor: '#E63946' }}></div>
             
             <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6" style={{ fontFamily: 'Anton, sans-serif' }}>
@@ -184,8 +192,9 @@ const PartnershipSection = () => {
               Join our network of training institutes and exam centers. Let's create a seamless experience for professionals seeking licensing excellence.
             </p>
             <button
+              onClick={handleContactClick}
               className="group w-full sm:w-auto px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5 text-white text-sm sm:text-base md:text-lg font-semibold rounded-full hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center space-x-2 sm:space-x-2 md:space-x-3 mx-auto"
-              style={{ background: 'linear-gradient(135deg, #1F6367 0%, #E63946 100%)', fontFamily: 'Anton, sans-serif' }}
+              style={{ background: 'linear-gradient(135deg, #164d61 0%, #E63946 100%)', fontFamily: 'Anton, sans-serif' }}
             >
               <span>Become a Partner</span>
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform" />
