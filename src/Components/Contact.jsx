@@ -70,6 +70,9 @@ const ContactUs = () => {
     } else {
       setErrors1({});
       setSuccessMessage1('Form 1 submitted successfully!');
+      setTimeout(() => {
+        setSuccessMessage1('');
+      }, 2000); // Message disappears after 2 seconds
       
       // Save submission to localStorage with timestamp
       try {
@@ -109,6 +112,9 @@ const ContactUs = () => {
     } else {
       setErrors2({});
       setSuccessMessage2('Form 2 submitted successfully!');
+      setTimeout(() => {
+        setSuccessMessage2('');
+      }, 2000); // Message disappears after 2 seconds
       
       // Save submission to localStorage with timestamp
       try {
