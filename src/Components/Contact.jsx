@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, Phone } from 'lucide-react';
 
 const ContactUs = () => {
@@ -22,6 +22,40 @@ const ContactUs = () => {
 
   const [mapView, setMapView] = useState('map');
 
+  // Load saved form data from localStorage on component mount
+  useEffect(() => {
+    try {
+      const savedFormData1 = localStorage.getItem('jobSeekerFormData');
+      const savedFormData2 = localStorage.getItem('employerFormData');
+      
+      if (savedFormData1) {
+        setFormData1(JSON.parse(savedFormData1));
+      }
+      if (savedFormData2) {
+        setFormData2(JSON.parse(savedFormData2));
+      }
+    } catch (error) {
+      console.error('Error loading form data from localStorage:', error);
+    }
+  }, []);
+
+  // Save form data to localStorage whenever it changes
+  useEffect(() => {
+    try {
+      localStorage.setItem('jobSeekerFormData', JSON.stringify(formData1));
+    } catch (error) {
+      console.error('Error saving job seeker form data:', error);
+    }
+  }, [formData1]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('employerFormData', JSON.stringify(formData2));
+    } catch (error) {
+      console.error('Error saving employer form data:', error);
+    }
+  }, [formData2]);
+
   const handleSubmit1 = (e) => {
     e.preventDefault();
     const newErrors = {};
@@ -36,10 +70,28 @@ const ContactUs = () => {
     } else {
       setErrors1({});
       setSuccessMessage1('Form 1 submitted successfully!');
+      
+      // Save submission to localStorage with timestamp
+      try {
+        const submissions = JSON.parse(localStorage.getItem('jobSeekerSubmissions') || '[]');
+        submissions.push({
+          ...formData1,
+          submittedAt: new Date().toISOString()
+        });
+        localStorage.setItem('jobSeekerSubmissions', JSON.stringify(submissions));
+      } catch (error) {
+        console.error('Error saving submission:', error);
+      }
+      
       console.log('Form 1 submitted:', formData1);
-      // Here you would typically send the data to a server
-      // For now, we'll just clear the form
+      
+      // Clear the form and localStorage for this form
       setFormData1({ name: '', email: '', phone: '', message: '' });
+      try {
+        localStorage.removeItem('jobSeekerFormData');
+      } catch (error) {
+        console.error('Error clearing form data:', error);
+      }
     }
   };
 
@@ -57,10 +109,28 @@ const ContactUs = () => {
     } else {
       setErrors2({});
       setSuccessMessage2('Form 2 submitted successfully!');
+      
+      // Save submission to localStorage with timestamp
+      try {
+        const submissions = JSON.parse(localStorage.getItem('employerSubmissions') || '[]');
+        submissions.push({
+          ...formData2,
+          submittedAt: new Date().toISOString()
+        });
+        localStorage.setItem('employerSubmissions', JSON.stringify(submissions));
+      } catch (error) {
+        console.error('Error saving submission:', error);
+      }
+      
       console.log('Form 2 submitted:', formData2);
-      // Here you would typically send the data to a server
-      // For now, we'll just clear the form
+      
+      // Clear the form and localStorage for this form
       setFormData2({ name: '', email: '', phone: '', message: '' });
+      try {
+        localStorage.removeItem('employerFormData');
+      } catch (error) {
+        console.error('Error clearing form data:', error);
+      }
     }
   };
 

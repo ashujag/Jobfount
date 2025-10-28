@@ -62,7 +62,7 @@ export default function Header({ prometricLicensingRef }) {
             <div className="flex justify-between items-center h-16 sm:h-20 px-4 sm:px-6">
               <div className="flex items-center animate-[slideRight_0.8s_ease-out]">
                 <a href="/" onClick={handleHomeClick} className="flex items-center">
-                  <img src={JobfountLogo} alt="Jobfount Logo" className="h-12 sm:h-20 w-auto transition-all duration-300" />
+                  <img src={JobfountLogo} alt="Jobfount Logo" className="h-16 sm:h-20 w-auto transition-all duration-300" />
                 </a>
               </div>
 
